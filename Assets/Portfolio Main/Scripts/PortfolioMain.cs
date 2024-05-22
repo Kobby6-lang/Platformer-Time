@@ -36,7 +36,7 @@ public class PortfolioMain : MonoBehaviour
             if (currentImageIndex + 1 < imagesToDisplay.Length) 
             {
                 currentImageIndex++;
-                displayImage.overrideSprite= imagesToDisplay[currentImageIndex];
+                displayImage.overrideSprite = imagesToDisplay[currentImageIndex];
             }
         }
     }
