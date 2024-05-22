@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Platformer Time/Levels/Main Menu.unity
     guid: 9710aca33d852634faa19a52ac8072da
   - enabled: 1
+    path: Assets/SnowBoarder/Scenes/Snow Main Menu.unity
+    guid: eddcfc6f113487d489b068d89a21352e
+  - enabled: 1
+    path: Assets/SnowBoarder/Scenes/Snow Level.unity
+    guid: 8971a2648ee4aad459069529d97d38ea
+  - enabled: 1
     path: Assets/Portfolio Main/Portfolio.unity
     guid: a50861c6ffd902b4c8d342fcd1f66b8f
   - enabled: 1
