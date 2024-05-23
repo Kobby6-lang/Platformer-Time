@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OpenURL : MonoBehaviour
 {
-    public void OpenWebsite(string url = "https://github.com/dashboard , https://x.com/KwabenaOseiTut6 ") 
+    public void OpenWebsite(string url = "https://github.com/dashboard") 
     {
         Application.OpenURL(url);
     }
