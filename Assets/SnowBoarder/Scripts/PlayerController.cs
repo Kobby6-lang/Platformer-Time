@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             surfaceEffector2D.speed = baseSpeed;
         }
+        Debug.Log("Pressed");
      }
 
     void RotatePlayer() 
