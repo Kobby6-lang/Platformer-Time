@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gun;
+    [SerializeField] float fallThreshold = -10f; // Threshold for falling
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
@@ -59,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (value.isPressed)
         {
-            // do stuff
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
         }
     }
@@ -71,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
-
     }
 
     void FlipSprite()
@@ -103,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")) || transform.position.y < fallThreshold)
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
@@ -112,3 +110,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+
